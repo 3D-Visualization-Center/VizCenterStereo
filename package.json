@@ -1,0 +1,24 @@
+{
+  "name": "com.vizcenter1.vizcenterstereo",
+  "displayName": "VizCenterStereo",
+  "version": "0.1.0",
+  "description": "Drop-in support for frame-sequential stereo.",
+  "dependencies": {
+    "com.unity.ugui": "2.0.0"
+  },
+  "author": {
+    "name": "Viz Center",
+    "url": "http://www.example.com",
+    "email": "example@email.com"
+  },
+  "changelogUrl": "https://example.com/changelog.html",
+  "documentationUrl": "https://example.com/",
+  "licensesUrl": "https://example.com/licensing.html",
+  "samples": [
+    {
+      "displayName": "Example Sample",
+      "description": "Replace this string with your own description of the sample. Delete the Samples folder if not needed.",
+      "path": "Samples~/Example"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Vizcenter1.Vizcenterstereo.Editor.Tests",
+    "references": [
+        "Vizcenter1.Vizcenterstereo.Editor",
+        "Vizcenter1.Vizcenterstereo"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Vizcenter1.Vizcenterstereo.Tests",
+    "references": [
+        "Vizcenter1.Vizcenterstereo"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

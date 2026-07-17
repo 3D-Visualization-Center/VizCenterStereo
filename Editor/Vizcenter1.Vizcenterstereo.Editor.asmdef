@@ -1,0 +1,10 @@
+{
+    "name": "Vizcenter1.Vizcenterstereo.Editor",
+    "references": [
+      "Vizcenter1.Vizcenterstereo"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
