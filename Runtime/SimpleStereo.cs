@@ -48,7 +48,7 @@ namespace Vizcenter1.VizCenterStereo {
             if (stereoActive)
             {
                 inversion *= -1;
-                cam.localPosition = Vector3.right * ipd * inversion;
+                cam.localPosition += Vector3.right * ipd * inversion;
                 StartCoroutine(ToggleEye());
             }
         }
