@@ -7,8 +7,8 @@ public class SingletonEnforcer : MonoBehaviour
 {
     public static List<SingletonEnforcer> instances;
     
-    [Tooltip("The instance of object you want to enforce having one of. Prunes the hierarchy once at Awake().")]
-    [SerializeField] Object desiredInstance;
+    [Tooltip("The instance of object you want to enforce having one of. Prunes the hierarchy one time at Awake().")]
+    [SerializeField] Component desiredInstance;
 
     void Awake()
     {
@@ -43,15 +43,15 @@ public class SingletonEnforcer : MonoBehaviour
         //    carry on removing other instances of the singleton object you originally
         //    added this component to mitigate.
 
-        Object[] foundObjects = Object.FindObjectsOfType(desiredInstance.GetType());
+        Component[] foundObjects = (Component[])FindObjectsOfType(desiredInstance.GetType());
 
         if(foundObjects.Length > 1)
         { //Multiple objects found. Flag it and delete this one.
             Debug.Log("Multiple objects sharing the type of " + desiredInstance.GetType() + ". Removing all others besides " + this.gameObject.name + ". Please consider removing the desired ones yourself from the objects in editor.");
-            foreach(Object ob in foundObjects)
+            foreach(Component ob in foundObjects)
             {
                 if(ob != desiredInstance)
-                    Destroy(ob);
+                    Destroy(ob.gameObject);
             }
         }
     }
