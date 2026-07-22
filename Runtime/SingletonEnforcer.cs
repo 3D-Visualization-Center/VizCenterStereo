@@ -10,6 +10,10 @@ public class SingletonEnforcer : MonoBehaviour
     [Tooltip("The instance of object you want to enforce having one of. Prunes the hierarchy one time at Awake().")]
     [SerializeField] Component desiredInstance;
 
+    public enum EnforcementType {Component, GameObject};
+    [Tooltip("How to enforce Singleton behavior. Destroy Components or destroy whole GameObjects?")] // Designed this way in case the thing you want to singleton-ize has dependencies and needs to have the whole object removed.
+    public EnforcementType enforcementType = EnforcementType.Component;
+
     void Awake()
     {
         if(SingletonEnforcer.instances == null)
@@ -51,7 +55,12 @@ public class SingletonEnforcer : MonoBehaviour
             foreach(Component ob in foundObjects)
             {
                 if(ob != desiredInstance)
-                    Destroy(ob.gameObject);
+                {
+                    if(enforcementType == EnforcementType.Component)
+                        Destroy(ob);
+                    else
+                        Destroy(ob.gameObject);
+                }   
             }
         }
     }
