@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Drop-in support for frame-sequential stereo.",
   "dependencies": {
-    "com.unity.ugui": "2.0.0"
+    "com.unity.ugui": "1.0.0"
   },
   "author": {
     "name": "Viz Center",
