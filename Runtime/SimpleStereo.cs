@@ -6,7 +6,8 @@ using UnityEngine.UI;
 namespace Vizcenter1.VizCenterStereo {
     public class SimpleStereo : MonoBehaviour {
         [Tooltip("Distance to render between eyes to create 3D vision.")]
-        public float ipd = .5f;
+        [Range(0,0.1f)]
+        public float ipd = .05f;
         int inversion = 1;
         bool stereoActive = true;
 
@@ -26,14 +27,14 @@ namespace Vizcenter1.VizCenterStereo {
                 cam = Camera.main.transform;
             StartCoroutine(ToggleEye());
 
-            ipdText.text = "" + RoundFloat(ipd, 0.01f);
+            ipdText.text = "" + RoundFloat(ipd, 0.001f);
             slider.value = ipd;
         }
 
         public void SetIpd(float _ipd)
         {
             ipd = _ipd;
-            ipdText.text = "" + RoundFloat(_ipd, 0.01f);
+            ipdText.text = "" + RoundFloat(_ipd, 0.001f);
         }
 
 
